@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+<h2>
+<table>
+<% @grid.each do |letter| %>
+<td><p><%= letter.capitalize %></p></td>
+<% end %>
+</table>
+</h2>
+
+<form action = "/score">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Your answer</label>
+    <input type="answer" name ="guess">
+    <input type="hidden" name="grid" value="<%= @grid.join %>">
+    <input type="hidden" name = "start_time" value="<%= Time.now %>">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
